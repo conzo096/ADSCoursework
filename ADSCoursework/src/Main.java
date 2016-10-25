@@ -7,82 +7,6 @@ import java.util.ArrayList;
 
 public class Main
 {
-
-	public static ArrayList<Point2D> loadTSPLib(String fName)
-	{
-		//Load in a TSPLib instance. This example assumes that the Edge weight type
-		//is EUC_2D.
-		//It will work for examples such as rl5915.tsp. Other files such as
-		//fri26.tsp .To use a different format, you will have to
-		//modify the this code
-		ArrayList<Point2D> result = new ArrayList<Point2D>();
-		BufferedReader br = null;
-		try
-		{
-			String currentLine;
-			int dimension =0;//Hold the dimension of the problem
-			boolean readingNodes = false;
-			br = new BufferedReader(new FileReader(fName));
-			while ((currentLine = br.readLine()) != null)
-			{
-				//Read the file until the end;
-				if (currentLine.contains("EOF"))
-				{
-					//EOF should be the last line
-					readingNodes = false;
-					//Finished reading nodes
-					if (result.size() != dimension)
-					{
-						//Check to see if the expected number of cities have been loaded
-						System.out.println("Error loading cities");
-						System.exit(-1);
-					}
-				}
-				if (readingNodes)
-				{
-					//If reading in the node data
-					String[] tokens = currentLine.split(" ");
-					//Split the line by spaces.
-					//tokens[0] is the city id and not needed in this example
-					float x = Float.parseFloat(tokens[1].trim());
-					float y = Float.parseFloat(tokens[2].trim());
-					//Use Java's built in Point2D type to hold a city
-					Point2D city = new Point2D.Float(x,y);
-					//Add this city into the arraylist
-					result.add(city);
-				}
-				if (currentLine.contains("DIMENSION"))
-				{
-					//Note the expected problem dimension (number of cities)
-					String[] tokens = currentLine.split(":");
-					dimension = Integer.parseInt(tokens[1].trim());
-				}
-				if (currentLine.contains("NODE_COORD_SECTION"))
-				{
-					//Node data follows this line
-					readingNodes = true;
-				}
-			}
-		}
-		catch (IOException e)
-		{
-		e.printStackTrace();
-		}
-		finally
-		{
-			try
-			{
-				if (br != null)
-					br.close();
-			}
-			catch (IOException ex)
-			{
-				ex.printStackTrace();
-			}
-		}
-		return result;
-	}
-
 	public static double routeLength(ArrayList<Point2D> cities)
 	{
 		//Calculate the length of a TSP route held in an ArrayList as a set of Points
@@ -107,31 +31,40 @@ public class Main
 	
 		// Current city to visit - set as first in array.
 		Point2D currentCity = cities.remove(0);
+		// Closest city to the current city.
+		Point2D closest = null;
 		// While cities left in list.
 		while (cities.size() >0)
 		{
 			// Add current city to list.
 			result.add(currentCity);
 			// Find closest city.
-			float distance = Float.MAX_VALUE;
+			double distance = Float.MAX_VALUE;
 			for(Point2D city : cities)
 			{
-				Point2D closest;
-				if(getDistance(currentCity,city) < distance)
+				if(Point2D.distance(currentCity.getX(), currentCity.getY(), city.getX(), city.getY()) < distance)
 				{
 					closest = currentCity;
-					distance = getDistance(currentCity,city);
-					cities.remove(closest);
+					distance = Point2D.distance(currentCity.getX(), currentCity.getY(), city.getX(), city.getY());
 				}
-				currentCity = closest;
 			}
+			cities.remove(closest);
+			currentCity = closest;
 		}
-		return cities;	
+		return result;	
 	}
 	
 	public static void main(String[] args)
 	{
-	
+		String fName = "C:\\Users\\40167111\\Documents\\GitHub\\ADSCoursework\\ADSCoursework\\src\\a280.tsp";
+		ArrayList<Point2D> cities = new ArrayList<Point2D>();
+		cities = TsbLoader.loadTSPLib(fName);
+		
+		ArrayList<Point2D> result = NearestNeighbour(cities);
+		for(int i =0; i < result.size();i++)
+		{
+			System.out.println(result.get(i).toString());
+		}
 	}
 
 }
