@@ -1,8 +1,6 @@
 import java.awt.geom.Point2D;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class Main
@@ -25,12 +23,13 @@ public class Main
 		return result;
 	}
 	
-	public static ArrayList<Point2D> NearestNeighbour(ArrayList<Point2D> cities)
+	public static ArrayList<Point2D> NearestNeighbour(ArrayList<Point2D> inCities)
 	{
+		ArrayList<Point2D> cities = new ArrayList<Point2D>(inCities);
 		ArrayList<Point2D> result = new ArrayList<Point2D>();
-	
-		// Current city to visit - set as first in array.
-		Point2D currentCity = cities.remove(0);
+		// Set current city.
+		Point2D currentCity = cities.get(0);
+		
 		// Closest city to the current city.
 		Point2D closest = null;
 		// While cities left in list.
@@ -39,13 +38,13 @@ public class Main
 			// Add current city to list.
 			result.add(currentCity);
 			// Find closest city.
-			double distance = Float.MAX_VALUE;
-			for(Point2D city : cities)
+			double distance = Double.MAX_VALUE;
+			for(Point2D t : cities)
 			{
-				if(Point2D.distance(currentCity.getX(), currentCity.getY(), city.getX(), city.getY()) < distance)
+				if(Point2D.distance(currentCity.getX(), currentCity.getY(), t.getX(), t.getY()) <= distance)
 				{
-					closest = currentCity;
-					distance = Point2D.distance(currentCity.getX(), currentCity.getY(), city.getX(), city.getY());
+					closest = t;
+					distance = Point2D.distance(currentCity.getX(), currentCity.getY(), t.getX(), t.getY());
 				}
 			}
 			cities.remove(closest);
@@ -54,17 +53,103 @@ public class Main
 		return result;	
 	}
 	
+	public static HashMap<Integer,Point2D> NearestNeighbourV1(HashMap<Integer,Point2D> inCities)
+	{
+		HashMap<Integer,Point2D> cities = new HashMap<Integer,Point2D>(inCities);
+		HashMap<Integer,Point2D> result = new HashMap<Integer,Point2D>();
+		// Set current city.
+		Point2D currentCity = cities.get(0);
+		// Closest city to the current city.
+		Point2D closest = null;
+		
+		int inumerator =0;
+		// While cities left in list.
+		while (cities.size() >0)
+		{
+			// Add current city to list.
+			result.put(inumerator,currentCity);
+			// Find closest city.
+			double distance = Double.MAX_VALUE;
+			for(int i =0; i< cities.size();i++)	// THIS WILL NOT WORK
+			{
+				if(Point2D.distance(currentCity.getX(), currentCity.getY(), cities.get(i).getX(), cities.get(i).getY()) <= distance)
+				{
+					closest = cities.get(i);
+					distance = Point2D.distance(currentCity.getX(), currentCity.getY(), cities.get(i).getX(), cities.get(i).getY());
+				}
+			}
+			cities.remove(closest);
+			currentCity = closest;
+			inumerator++;
+		}
+		return result;	
+	}
+	
+	// This method is here to ensure that all cities are included.
+	public static Boolean CheckLists(ArrayList<Point2D> original, ArrayList<Point2D> results)
+	{
+		Boolean inList = false;
+		for(Point2D x : original)
+		{
+			for(Point2D y : results)
+			{
+				if(x == y)
+				{
+					inList = true;
+					break;
+				}
+				else
+					inList = false;
+			}
+		}
+		return inList;
+	}
+		
+	public static void PrintResults(ArrayList<Point2D> original, ArrayList<Point2D> results, double elapsedTime)
+	{
+		  
+		if (CheckLists(original,results))
+		{
+			double cityDist = routeLength(original);
+			double resultDist = routeLength(results);
+			System.out.println("Original size: " +original.size() + " | Result size: "+results.size());    
+	      
+			System.out.println("Original length: " +cityDist + " | Result length: "+resultDist);    
+			System.out.println("Time taken: "+ elapsedTime + " milliseconds.");
+			DrawRoute route = new DrawRoute();
+			route.Route(original);
+			DrawRoute route1 = new DrawRoute();
+			route1.Route(results);
+		}
+		else
+			System.out.println("Algorithm did not work. Missing cities.");
+	}
+	
 	public static void main(String[] args)
 	{
-		String fName = "C:\\Users\\40167111\\Documents\\GitHub\\ADSCoursework\\ADSCoursework\\src\\a280.tsp";
-		ArrayList<Point2D> cities = new ArrayList<Point2D>();
-		cities = TsbLoader.loadTSPLib(fName);
-		
-		ArrayList<Point2D> result = NearestNeighbour(cities);
-		for(int i =0; i < result.size();i++)
+		//	String fName = "..\\src\\rl5915.tsp";
+		String fName ="C:\\Users\\conner\\Documents\\GitHub\\ADSCoursework\\ADSCoursework\\src\\rl5915.tsp";
+		ArrayList<Point2D> cities = new ArrayList<Point2D>(TsbLoader.loadTSPLib(fName));
+		HashMap<Integer,Point2D> hCities = new HashMap<Integer,Point2D>(cities.size());
+		for (int i=0; i< cities.size(); i++)
 		{
-			System.out.println(result.get(i).toString());
+			hCities.put(i,cities.get(i));
 		}
+	    long startTime = System.currentTimeMillis();
+	
+	    // INSERT WHAT ALGORITHM TO USE HERE:
+	//	ArrayList<Point2D> results = NearestNeighbour(cities);
+		HashMap<Integer,Point2D> results = NearestNeighbourV1(hCities);
+		long stopTime = System.currentTimeMillis();
+	    long elapsedTime = stopTime - startTime;
+	    System.out.println(results.size());
+	    //ArrayList<Point2D> convertion = new ArrayList<Point2D>();
+	    //for(int i =0; i < results.size();i++)
+	   // 	convertion.add(results.get(i));
+	    
+	//    PrintResults(cities,results,elapsedTime);
+	   
+
 	}
 
 }

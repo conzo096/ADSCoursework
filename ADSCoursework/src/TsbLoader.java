@@ -48,6 +48,7 @@ public class TsbLoader
 					//Use Java's built in Point2D type to hold a city
 					Point2D city = new Point2D.Float(x,y);
 					//Add this city into the arraylist
+				//	System.out.println("Adding: " + city.toString());
 					result.add(city);
 				}
 				if (currentLine.contains("DIMENSION"))

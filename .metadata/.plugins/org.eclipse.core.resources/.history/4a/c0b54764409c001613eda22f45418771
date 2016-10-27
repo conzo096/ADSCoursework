@@ -1,0 +1,67 @@
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Polygon;
+import java.awt.geom.Point2D;
+import java.util.ArrayList;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+
+public class DrawRoute extends JPanel
+{
+	private static final long serialVersionUID = 1L;
+	private JFrame mainMap;
+	private Polygon poly;
+
+	public DrawRoute(){}
+	
+	public void Route(ArrayList<Point2D> points)
+	{
+		// Visually approximate, but good enough.
+		mainMap = new JFrame();
+        mainMap.setResizable(true);
+
+        mainMap.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        int[] xCoords = new int[points.size()];
+        int[] yCoords = new int[points.size()];
+        for(int i =0; i < points.size();i++)
+        {
+        	xCoords[i] = (int)points.get(i).getX()/20;
+        	yCoords[i] = (int)points.get(i).getY()/20;
+        }
+
+      //  int xCoords[] = {150, 250, 325, 375, 450, 275, 100};
+     //   int yCoords[] = {150, 100, 125, 225, 250, 375, 300};
+    	poly = new Polygon(xCoords, yCoords, xCoords.length);
+        JPanel p = new JPanel()
+        {
+           private static final long serialVersionUID = 1L;
+			@Override
+            protected void paintComponent(Graphics g)
+			{
+                super.paintComponent(g);
+                g.setColor(Color.BLUE);
+                g.drawPolygon(poly);
+            }
+
+	        private void drawNthPoint(Graphics g, Polygon polygon, int nth)
+	        {
+	            int x = polygon.xpoints[nth];
+	            int height = g.getFontMetrics().getHeight();
+	            int y = polygon.ypoints[nth] < height ? polygon.ypoints[nth] + height : polygon.ypoints[nth];
+	            g.drawString(nth, x, y);
+	        }
+            @Override
+            public Dimension getPreferredSize()
+            {
+                return new Dimension(1980, 1024);
+            }
+        };
+        mainMap.add(p);
+        mainMap.pack();
+        mainMap.setVisible(true);
+	}
+}
