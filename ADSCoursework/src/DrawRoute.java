@@ -29,8 +29,8 @@ public class DrawRoute extends JPanel
         int[] yCoords = new int[points.size()];
         for(int i =0; i < points.size();i++)
         {
-        	xCoords[i] = (int)points.get(i).getX()/20;
-        	yCoords[i] = (int)points.get(i).getY()/20;
+        	xCoords[i] = (int)points.get(i).getX()/15;
+        	yCoords[i] = (int)points.get(i).getY()/15;
         }
     	poly = new Polygon(xCoords, yCoords, xCoords.length);
         JPanel p = new JPanel()
@@ -41,7 +41,7 @@ public class DrawRoute extends JPanel
 			{
                 super.paintComponent(g);
                 g.setColor(Color.BLACK);
-                g.drawString("Scaled down by 20.",50,50);
+                g.drawString("Scaled down by 15.",50,50);
                 g.setColor(Color.BLUE);
                 g.drawPolygon(poly);
                 g.setColor(Color.BLACK);
@@ -55,8 +55,8 @@ public class DrawRoute extends JPanel
 	        {	        	
 	            int x = polygon.xpoints[nth];
 	            int y = polygon.ypoints[nth];
-	            String coord = ".";
-	            g.drawString(coord, x, y);
+	            g.drawOval(x-3,y-3,6,6);
+	            g.fillOval(x-3,y-3,6,6);
 	        }
             @Override
             public Dimension getPreferredSize()
