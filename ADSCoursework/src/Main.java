@@ -61,29 +61,93 @@ public class Main
 		Point2D currentCity = cities.get(0);
 		// Closest city to the current city.
 		Point2D closest = null;
-		
+		int k =0;
 		int inumerator =0;
 		// While cities left in list.
-		while (cities.size() >0)
+		while (!cities.isEmpty())
 		{
 			// Add current city to list.
 			result.put(inumerator,currentCity);
 			// Find closest city.
 			double distance = Double.MAX_VALUE;
-			for(int i =0; i< cities.size();i++)	// THIS WILL NOT WORK
+			for (int key : cities.keySet())
 			{
-				if(Point2D.distance(currentCity.getX(), currentCity.getY(), cities.get(i).getX(), cities.get(i).getY()) <= distance)
+				if(Point2D.distance(currentCity.getX(), currentCity.getY(), cities.get(key).getX(), cities.get(key).getY()) <= distance)
 				{
-					closest = cities.get(i);
-					distance = Point2D.distance(currentCity.getX(), currentCity.getY(), cities.get(i).getX(), cities.get(i).getY());
+					closest = cities.get(key);
+					k= key;
+					distance = Point2D.distance(currentCity.getX(), currentCity.getY(), cities.get(key).getX(), cities.get(key).getY());
+				}
+			}
+			//cities.remove(closest);
+			cities.remove(k, closest);
+			currentCity = closest;
+			inumerator++;
+			System.out.println(inumerator);
+		}
+		return result;	
+	}
+	
+	public static ArrayList<Point2D> NearestXNeighbour(ArrayList<Point2D> inCities)
+	{
+		ArrayList<Point2D> cities = new ArrayList<Point2D>(inCities);
+		ArrayList<Point2D> result = new ArrayList<Point2D>();
+		// Set current city.
+		Point2D currentCity = cities.get(0);
+		
+		// Closest city to the current city.
+		Point2D closest = null;
+		// While cities left in list.
+		while (cities.size() >0)
+		{
+			// Add current city to list.
+			result.add(currentCity);
+			// Find closest city.
+			double closestX = Double.MAX_VALUE;
+			for(Point2D t : cities)
+			{
+				if( t.getX() <= closestX)
+				{
+					closest = t;
+					closestX = closest.getX();
 				}
 			}
 			cities.remove(closest);
 			currentCity = closest;
-			inumerator++;
 		}
 		return result;	
 	}
+	
+	public static ArrayList<Point2D> NearestYNeighbour(ArrayList<Point2D> inCities)
+	{
+		ArrayList<Point2D> cities = new ArrayList<Point2D>(inCities);
+		ArrayList<Point2D> result = new ArrayList<Point2D>();
+		// Set current city.
+		Point2D currentCity = cities.get(0);
+		
+		// Closest city to the current city.
+		Point2D closest = null;
+		// While cities left in list.
+		while (cities.size() >0)
+		{
+			// Add current city to list.
+			result.add(currentCity);
+			// Find closest city.
+			double closestY = Double.MAX_VALUE;
+			for(Point2D t : cities)
+			{
+				if( t.getY() <= closestY)
+				{
+					closest = t;
+					closestY = closest.getY();
+				}
+			}
+			cities.remove(closest);
+			currentCity = closest;
+		}
+		return result;	
+	}
+	
 	
 	// This method is here to ensure that all cities are included.
 	public static Boolean CheckLists(ArrayList<Point2D> original, ArrayList<Point2D> results)
@@ -127,27 +191,35 @@ public class Main
 	
 	public static void main(String[] args)
 	{
-		//	String fName = "..\\src\\rl5915.tsp";
-		String fName ="C:\\Users\\conner\\Documents\\GitHub\\ADSCoursework\\ADSCoursework\\src\\rl5915.tsp";
+		String fName = "..//ADSCoursework//src//rl5915.tsp";
 		ArrayList<Point2D> cities = new ArrayList<Point2D>(TsbLoader.loadTSPLib(fName));
 		HashMap<Integer,Point2D> hCities = new HashMap<Integer,Point2D>(cities.size());
 		for (int i=0; i< cities.size(); i++)
 		{
 			hCities.put(i,cities.get(i));
 		}
+		
+		// Start time when algorithm is about to run.
 	    long startTime = System.currentTimeMillis();
 	
 	    // INSERT WHAT ALGORITHM TO USE HERE:
 	//	ArrayList<Point2D> results = NearestNeighbour(cities);
-		HashMap<Integer,Point2D> results = NearestNeighbourV1(hCities);
-		long stopTime = System.currentTimeMillis();
+	  ArrayList<Point2D> results = NearestXNeighbour(cities);
+    //	ArrayList<Point2D> results = NearestYNeighbour(cities);
+		
+    //	HashMap<Integer,Point2D> results = NearestNeighbourV1(hCities);
+				
+		// Stop time once algorithm is finished.
+	    long stopTime = System.currentTimeMillis();
+	    // Calculate how long it took.
 	    long elapsedTime = stopTime - startTime;
-	    System.out.println(results.size());
-	    //ArrayList<Point2D> convertion = new ArrayList<Point2D>();
+	    //ArrayList<Point2D> conversion = new ArrayList<Point2D>();
 	    //for(int i =0; i < results.size();i++)
-	   // 	convertion.add(results.get(i));
+	    //	conversion.add(results.get(i));
+	    //PrintResults(cities,conversion,elapsedTime);
 	    
-	//    PrintResults(cities,results,elapsedTime);
+	    // Print result.
+	    PrintResults(cities,results,elapsedTime);
 	   
 
 	}
