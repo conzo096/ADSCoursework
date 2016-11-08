@@ -16,7 +16,7 @@ public class DrawRoute extends JPanel
 	private Polygon poly;
 
 	public DrawRoute(){}
-	
+		
 	public void Route(final ArrayList<Point2D> points)
 	{
 		// Visually approximate, but good enough.
@@ -29,8 +29,8 @@ public class DrawRoute extends JPanel
         int[] yCoords = new int[points.size()];
         for(int i =0; i < points.size();i++)
         {
-        	xCoords[i] = (int)points.get(i).getX()/15;
-        	yCoords[i] = (int)points.get(i).getY()/15;
+        	xCoords[i] = (int)points.get(i).getX()/18;
+        	yCoords[i] = (int)points.get(i).getY()/18;
         }
     	poly = new Polygon(xCoords, yCoords, xCoords.length);
         JPanel p = new JPanel()
@@ -41,7 +41,7 @@ public class DrawRoute extends JPanel
 			{
                 super.paintComponent(g);
                 g.setColor(Color.BLACK);
-                g.drawString("Scaled down by 15.",50,50);
+                g.drawString("Scaled down by 18.",50,50);
                 g.setColor(Color.BLUE);
                 g.drawPolygon(poly);
                 g.setColor(Color.BLACK);
