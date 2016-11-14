@@ -22,7 +22,7 @@ public class Main
 		String data5 = "..//ADSCoursework//src//rl1889.tsp";
 		
 		// Load data points into array.
-		ArrayList<Point2D> cities = new ArrayList<Point2D>(TsbLoader.loadTSPLib(data4));
+		ArrayList<Point2D> cities = new ArrayList<Point2D>(TsbLoader.loadTSPLib(data3));
 		
 		// Create arrayList for results to be stored in. Same size as in cities.
 		// This should be slightly more efficient as there is no need to recalc size.
@@ -42,11 +42,12 @@ public class Main
 		    long startTime = System.currentTimeMillis();
 		
 		    // ---- Only put method for algorithm below this or results are inaccurate! ---- \\
-		    //results = NearestNeighbourAlgorithm.NearestNeighbour(cities);
+		    results = NearestNeighbourAlgorithm.NearestNeighbour(cities);
 		    // HASHMAP ONE.
 		    //results = NearestNeighbourAlgorithm.NearestNeighbourV1(cities);
 		    //results = NearestNeighbourAlgorithm.NearestNeighbourV2(cities);
-		    //results = NearestNeighbourAlgorithm.NearestNeighbourV3(cities);	// BROKEN Size is same so error is checking each cities.
+		    //results = NearestNeighbourAlgorithm.NearestNeighbourV3(cities);
+		    //results = NearestNeighbourAlgorithm.NearestNeighbourV4(cities);
 		    //results = NearestNeighbourAlgorithm.NearestXNeighbour(cities);
 		    //results = NearestNeighbourAlgorithm.NearestYNeighbour(cities);
 		    

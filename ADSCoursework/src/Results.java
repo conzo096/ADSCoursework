@@ -75,8 +75,7 @@ public class Results
 		}
 		else
 		{	
-			System.out.println("Algorithm did not work. Number of input != number of output");
-			System.out.println("Input: "+ original.size() + "| Output: " + resultList.size());
+			System.out.println("Input: "+ original.size() + " | Output: " + resultList.size());
 		}
 	}
 }

@@ -13,8 +13,7 @@ public class NearestNeighbourAlgorithm
 		ArrayList<Point2D> cities = new ArrayList<Point2D>(inCities);
 		ArrayList<Point2D> result = new ArrayList<Point2D>();
 		// Set current city.
-		Point2D currentCity = cities.get(0);
-		cities.remove(currentCity);
+		Point2D currentCity = cities.remove(0);
 		
 		// Closest city to the current city.
 		Point2D closest = null;
@@ -145,7 +144,55 @@ public class NearestNeighbourAlgorithm
 		return result;	
 	}
 	
-	
+
+	public static ArrayList<Point2D> NearestNeighbourV4(ArrayList<Point2D> inCities)
+	{
+		// SLOW AND BAD.
+		
+		ArrayList<Point2D> cities = new ArrayList<Point2D>(inCities);
+		ArrayList<Point2D> result = new ArrayList<Point2D>();
+		// Set current city.
+		Point2D currentCity = cities.get(0);
+		cities.remove(currentCity);
+		
+		// Closest city to the current city.
+		Point2D closest = null;
+		// While cities left in list.
+		while (result.size() != inCities.size())
+		{
+			// Add current city to list.
+			if(!result.contains(currentCity))
+				result.add(currentCity);
+			// Find closest city.
+			double distance = Double.MAX_VALUE;
+			for(int i=0; i < cities.size(); i++)
+			{
+			
+				Point2D t = cities.get(i);
+				// Check if the current city 
+				if(Point2D.distance(currentCity.getX(), currentCity.getY(), t.getX(), t.getY()) < distance)
+				{
+					closest = t;
+					distance = Point2D.distance(currentCity.getX(), currentCity.getY(), t.getX(), t.getY());
+				}
+				// If there is another city after it check if that is closer.
+				if (i+1 < cities.size())
+				{
+					Point2D n = cities.get(i+1);
+					if(Point2D.distance(currentCity.getX(), currentCity.getY(), n.getX(), n.getY()) < distance)
+					{
+						closest = n;
+						distance = Point2D.distance(currentCity.getX(), currentCity.getY(), n.getX(), n.getY());
+					}
+					
+				}	
+			}
+			cities.remove(closest);
+			currentCity = closest;
+			
+		}
+		return result;	
+	}
 
 	public static ArrayList<Point2D> NearestXNeighbour(ArrayList<Point2D> inCities)
 	{
