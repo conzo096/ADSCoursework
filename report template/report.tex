@@ -35,15 +35,10 @@ Edinburgh Napier University\\
 Algorithms and Data Structures (SET09117)}
 \pdfauthor{Conner Weatherston}
 
-\keywords{travelling salesman problem, nearest neighbour, optimisation}
+\keywords{travelling salesman problem, nearest neighbour, optimisation, algorithms}
 
 \begin{document}
 
-\teaser{
-   \includegraphics[height=1.5in]{images/sampleteaser}
-   \caption{Place a teaser image at the top of your report to show key examples of your work (e.g., multiple screenshots of the different test situations) - Every figure should have a caption and a description.  For example, each figure is labelled and explained: (a) soft bodies, (b) particles, (c) inverse kinematics, (e) fur shells, and (f) position-based dynamics for cloth effects.}
-   \label{fig:teaser}
- }
 
 \maketitle
 
@@ -52,7 +47,7 @@ Algorithms and Data Structures (SET09117)}
 \begin{abstract}
 
 PLACE ABSTRACT HERE.
-
+This report is aimed at finding a suitable algorithm in order to solve the travelling salesman problem. 
 \end{abstract}
 
 
@@ -164,8 +159,18 @@ As it is based on the nearest neighbour still there is very little difference in
 \end{algorithm}
 
 \section{Results}
-\paragraph{Data set rl5915}\hfill
 
+The results were obtained from the same machine to ensure consistency and to prevent inaccurate results. The specifications of the computer used to collect the results are as follows:
+\begin{itemize}
+\item Processor: 	Name it.
+\item Graphics card:	Name it.
+\item Ram:	
+\item Hard drive.
+\end{itemize}
+
+For each data set each algorithm
+Also while collecting the results extremes on both sides were removed in order to create a more accurate average. This was to take into account Java garbage collection.
+\paragraph{Data set rl5915}
 
 rl5915 has a size of 5915 and when unsorted has a total distance of 1.0145047117318021E7.
  \\  \includegraphics[height=1.5in]{images/rl5915unsorted}
@@ -247,6 +252,22 @@ Due to the nature of the nearest neighbour algorithm some of the variations impl
  
  WHAT IMPROVEMENTS CAN BE MADE.
   
+  Comparing to original nearest neighbour to nearest neighbout version 3 there is a notable increase in performance due to rewriting the algorithm slightly. This was done by increasing storage requirement and storing the distance of the current city and the city that the for loop was at. As the Point2D distance function uses multiplication and square rooting. This causes a hit to performance. So by storing the result of the function it means that the function is only performed once instead of the potential two times (the other time being if the distance is shorter than the last distance) in the for loop. To improve upon it more the square root was not necessary as it is only comparing distances between the two. So using the distanceSQ has a postive impact on the computation time on the algorithm.
+  
+  The nearest neighbour is slower compared to the nearest x and nearest y algorithms. The reason for this is also due to the distance function. It is quicker to straight up compare two numbers like what is done in nearest x/y than calculating the distance between two points.
+  
+  In version 2 the total distance varies so much due to starting at a random position. Due to this 
+
+
+\paragraph{Data set rl5934}
+
+\paragraph{Data set rl1304}
+
+
+\paragraph{Data set rl1323}
+
+
+\paragraph{Data set rl1889}
 
 \section{Conclusion and Future work}
 The report should finish with a summary to give a brief overview of what the reader should remember most.  What was most important? The future work part only needs to be covered in your final report.
