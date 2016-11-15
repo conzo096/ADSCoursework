@@ -62,6 +62,11 @@ public class Results
 		 // Check if results are valid. 
 		if (Util.CheckLists(original,resultList))
 		{
+			for(int i =0; i < times.size();i++)
+				System.out.println("Time:" + times.get(i));
+			System.out.println(CalculateAverageTime());
+			
+			
 			double cityDist = Util.routeLength(original);
 			double resultDist = Util.routeLength(resultList);
 			System.out.println("Original size: " +original.size() + " | Result size: "+resultList.size());    

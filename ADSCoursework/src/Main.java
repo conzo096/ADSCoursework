@@ -22,34 +22,25 @@ public class Main
 		String data5 = "..//ADSCoursework//src//rl1889.tsp";
 		
 		// Load data points into array.
-		ArrayList<Point2D> cities = new ArrayList<Point2D>(TsbLoader.loadTSPLib(data3));
+		ArrayList<Point2D> cities = new ArrayList<Point2D>(TsbLoader.loadTSPLib(data1));
 		
 		// Create arrayList for results to be stored in. Same size as in cities.
 		// This should be slightly more efficient as there is no need to recalc size.
 		ArrayList<Point2D> results = new ArrayList<Point2D>(cities.size());
-		
-		// Do I really want to include this - report?
-		HashMap<Integer,Point2D> hCities = new HashMap<Integer,Point2D>(cities.size());
-		for (int i=0; i< cities.size(); i++)
-		{
-			hCities.put(i,cities.get(i));
-		}
-		
-		// Should I do a loop for all the results.
-	//	for(int i =0; i <50; i++)
+				// Should I do a loop for all the results.
+		for(int i =0; i <5; i++)
 		{
 			// Start time when algorithm is about to run.
 		    long startTime = System.currentTimeMillis();
 		
 		    // ---- Only put method for algorithm below this or results are inaccurate! ---- \\
-		    results = NearestNeighbourAlgorithm.NearestNeighbour(cities);
-		    // HASHMAP ONE.
-		    //results = NearestNeighbourAlgorithm.NearestNeighbourV1(cities);
+		    //results = NearestNeighbourAlgorithm.NearestNeighbour(cities);
+		    //results = NearestNeighbourAlgorithm.NearestNeighbourSQ(cities);
 		    //results = NearestNeighbourAlgorithm.NearestNeighbourV2(cities);
 		    //results = NearestNeighbourAlgorithm.NearestNeighbourV3(cities);
 		    //results = NearestNeighbourAlgorithm.NearestNeighbourV4(cities);
 		    //results = NearestNeighbourAlgorithm.NearestXNeighbour(cities);
-		    //results = NearestNeighbourAlgorithm.NearestYNeighbour(cities);
+		    results = NearestNeighbourAlgorithm.NearestYNeighbour(cities);
 		    
 		    // Stop time once algorithm is finished.
 		    long stopTime = System.currentTimeMillis();

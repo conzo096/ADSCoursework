@@ -1,7 +1,6 @@
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Random;
 
 
@@ -10,6 +9,8 @@ public class NearestNeighbourAlgorithm
 
 	public static ArrayList<Point2D> NearestNeighbour(ArrayList<Point2D> inCities)
 	{
+		// This is the default nearest neighbour algorithm. The other methods are based on this. 
+		
 		ArrayList<Point2D> cities = new ArrayList<Point2D>(inCities);
 		ArrayList<Point2D> result = new ArrayList<Point2D>();
 		// Set current city.
@@ -40,46 +41,47 @@ public class NearestNeighbourAlgorithm
 		}
 		return result;	
 	}
-	
-	
-	// THIS CAN BE WRITTEN IN A MORE OPTIMISED FASHION AND USE HASHMAP CORRECTLY.
-	public static HashMap<Integer,Point2D> NearestNeighbourV1(HashMap<Integer,Point2D> inCities)
+
+	public static ArrayList<Point2D> NearestNeighbourSQ(ArrayList<Point2D> inCities)
 	{
-		HashMap<Integer,Point2D> cities = new HashMap<Integer,Point2D>(inCities);
-		HashMap<Integer,Point2D> result = new HashMap<Integer,Point2D>();
+		
+		// This is a more optimised version of the original algorithm.
+		
+		ArrayList<Point2D> cities = new ArrayList<Point2D>(inCities);
+		ArrayList<Point2D> result = new ArrayList<Point2D>();
 		// Set current city.
-		Point2D currentCity = cities.get(0);
+		Point2D currentCity = cities.remove(0);
+		
 		// Closest city to the current city.
 		Point2D closest = null;
-		int k =0;
-		int inumerator =0;
 		// While cities left in list.
-		while (!cities.isEmpty())
+		while (result.size() != inCities.size())
 		{
 			// Add current city to list.
-			result.put(inumerator,currentCity);
+			if(!result.contains(currentCity))
+				result.add(currentCity);
 			// Find closest city.
 			double distance = Double.MAX_VALUE;
-			for (int key : cities.keySet())
+			for(Point2D t : cities)
 			{
-				if(Point2D.distance(currentCity.getX(), currentCity.getY(), cities.get(key).getX(), cities.get(key).getY()) <= distance)
+				double dist = Point2D.distanceSq(currentCity.getX(), currentCity.getY(), t.getX(), t.getY());  
+				if(dist < distance)
 				{
-					closest = cities.get(key);
-					k= key;
-					distance = Point2D.distance(currentCity.getX(), currentCity.getY(), cities.get(key).getX(), cities.get(key).getY());
+					closest = t;
+					distance = dist;
 				}
+			
 			}
-			//cities.remove(closest);
-			cities.remove(k, closest);
+			cities.remove(closest);
 			currentCity = closest;
-			inumerator++;
-			System.out.println(inumerator);
+			
 		}
 		return result;	
 	}
 	
 	public static ArrayList<Point2D> NearestNeighbourV2(ArrayList<Point2D> inCities)
 	{
+		// This method just randomises the starting point. 
 		Random rand = new Random();
 		
 		ArrayList<Point2D> cities = new ArrayList<Point2D>(inCities);
@@ -113,13 +115,13 @@ public class NearestNeighbourAlgorithm
 	
 	public static ArrayList<Point2D> NearestNeighbourV3(ArrayList<Point2D> inCities)
 	{
-		Random rand = new Random();
-		
+		// This method randomises the list. Results are unpredictable.
+
 		ArrayList<Point2D> cities = new ArrayList<Point2D>(inCities);
 		Collections.shuffle(cities);
 		ArrayList<Point2D> result = new ArrayList<Point2D>();
 		// Set current city.
-		Point2D currentCity = cities.get(rand.nextInt(cities.size()-1));
+		Point2D currentCity = cities.remove(0);
 		
 		// Closest city to the current city.
 		Point2D closest = null;
@@ -147,7 +149,8 @@ public class NearestNeighbourAlgorithm
 
 	public static ArrayList<Point2D> NearestNeighbourV4(ArrayList<Point2D> inCities)
 	{
-		// SLOW AND BAD.
+		// This method is not efficient. In theory it is supposed to half the iterations of the for loop
+		// at the cost of an additional check in 
 		
 		ArrayList<Point2D> cities = new ArrayList<Point2D>(inCities);
 		ArrayList<Point2D> result = new ArrayList<Point2D>();
@@ -183,6 +186,7 @@ public class NearestNeighbourAlgorithm
 					{
 						closest = n;
 						distance = Point2D.distance(currentCity.getX(), currentCity.getY(), n.getX(), n.getY());
+						i++;
 					}
 					
 				}	
@@ -196,6 +200,7 @@ public class NearestNeighbourAlgorithm
 
 	public static ArrayList<Point2D> NearestXNeighbour(ArrayList<Point2D> inCities)
 	{
+		// This method just checks along the x-axis.
 		ArrayList<Point2D> cities = new ArrayList<Point2D>(inCities);
 		ArrayList<Point2D> result = new ArrayList<Point2D>();
 		// Set current city.
@@ -213,7 +218,7 @@ public class NearestNeighbourAlgorithm
 			double closestX = Double.MAX_VALUE;
 			for(Point2D t : cities)
 			{
-				if( t.getX() <= closestX)
+				if( t.getX() < closestX)
 				{
 					closest = t;
 					closestX = closest.getX();
@@ -227,6 +232,7 @@ public class NearestNeighbourAlgorithm
 	
 	public static ArrayList<Point2D> NearestYNeighbour(ArrayList<Point2D> inCities)
 	{
+		// This method just checks along the y-axis.
 		ArrayList<Point2D> cities = new ArrayList<Point2D>(inCities);
 		ArrayList<Point2D> result = new ArrayList<Point2D>();
 		// Set current city.

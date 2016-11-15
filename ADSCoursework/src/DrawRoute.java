@@ -61,7 +61,7 @@ public class DrawRoute extends JPanel
             @Override
             public Dimension getPreferredSize()
             {
-                return new Dimension(1980, 1024);
+                return new Dimension(1980, 1080);
             }
         };
         mainMap.add(p);
