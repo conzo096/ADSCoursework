@@ -13,6 +13,9 @@ public class Main
 		String data3 = "..//ADSCoursework//src//rl5934.tsp";
 		String data4 = "..//ADSCoursework//src//rl1304.tsp";
 		String data5 = "..//ADSCoursework//src//rl1889.tsp";
+		String data6 = "..//ADSCoursework//src//berlin52.tsp";
+		
+
 		
 		// Load data points into array.
 		ArrayList<Point2D> cities = new ArrayList<Point2D>(TsbLoader.loadTSPLib(data1));
@@ -20,20 +23,20 @@ public class Main
 		// Create arrayList for results to be stored in. Same size as in cities.
 		// This should be slightly more efficient as there is no need to recalc size.
 		ArrayList<Point2D> results = new ArrayList<Point2D>(cities.size());
-				// Should I do a loop for all the results.
+		// Should I do a loop for all the results.
 		for(int i =0; i <5; i++)
 		{
 			// Start time when algorithm is about to run.
 		    long startTime = System.currentTimeMillis();
 		
 		    // ---- Only put method for algorithm below this or results are inaccurate! ---- \\
-		    //results = NearestNeighbourAlgorithm.NearestNeighbour(cities);
-		    //results = NearestNeighbourAlgorithm.NearestNeighbourSQ(cities);
-		    //results = NearestNeighbourAlgorithm.NearestNeighbourV2(cities);
-		    //results = NearestNeighbourAlgorithm.NearestNeighbourV3(cities);
-		    //results = NearestNeighbourAlgorithm.NearestNeighbourV4(cities);
-		    //results = NearestNeighbourAlgorithm.NearestXNeighbour(cities);
-		    results = NearestNeighbourAlgorithm.NearestYNeighbour(cities);
+		   // results = NearestNeighbourAlgorithm.NearestNeighbour(cities);
+		    //results = NearestNeighbourAlgorithm.NearestNeighbourRandStart(cities);
+		  //  results = NearestNeighbourAlgorithm.NearestNeighbourShuffle(cities);
+		   // results = NearestNeighbourAlgorithm.NearestNeighbourSQ(cities);
+		   results = NearestNeighbourAlgorithm.NearestNeighbourRewrite(cities);
+		  // results = NearestNeighbourAlgorithm.NearestXNeighbour(cities);
+		    //results = NearestNeighbourAlgorithm.NearestYNeighbour(cities);
 		    
 		    // Stop time once algorithm is finished.
 		    long stopTime = System.currentTimeMillis();

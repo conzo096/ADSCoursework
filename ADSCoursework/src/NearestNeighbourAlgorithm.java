@@ -79,7 +79,7 @@ public class NearestNeighbourAlgorithm
 		return result;	
 	}
 	
-	public static ArrayList<Point2D> NearestNeighbourV2(ArrayList<Point2D> inCities)
+	public static ArrayList<Point2D> NearestNeighbourRandStart(ArrayList<Point2D> inCities)
 	{
 		// This method just randomises the starting point. 
 		Random rand = new Random();
@@ -113,10 +113,9 @@ public class NearestNeighbourAlgorithm
 		return result;	
 	}
 	
-	public static ArrayList<Point2D> NearestNeighbourV3(ArrayList<Point2D> inCities)
+	public static ArrayList<Point2D> NearestNeighbourShuffle(ArrayList<Point2D> inCities)
 	{
 		// This method randomises the list. Results are unpredictable.
-
 		ArrayList<Point2D> cities = new ArrayList<Point2D>(inCities);
 		Collections.shuffle(cities);
 		ArrayList<Point2D> result = new ArrayList<Point2D>();
@@ -147,7 +146,7 @@ public class NearestNeighbourAlgorithm
 	}
 	
 
-	public static ArrayList<Point2D> NearestNeighbourV4(ArrayList<Point2D> inCities)
+	public static ArrayList<Point2D> NearestNeighbourRewrite(ArrayList<Point2D> inCities)
 	{
 		// This method is not efficient. In theory it is supposed to half the iterations of the for loop
 		// at the cost of an additional check in 
@@ -170,19 +169,20 @@ public class NearestNeighbourAlgorithm
 			double distance = Double.MAX_VALUE;
 			for(int i=0; i < cities.size(); i++)
 			{
-			
 				Point2D t = cities.get(i);
+				double dist = Point2D.distance(currentCity.getX(), currentCity.getY(), t.getX(), t.getY());
 				// Check if the current city 
-				if(Point2D.distance(currentCity.getX(), currentCity.getY(), t.getX(), t.getY()) < distance)
+				if( dist < distance)
 				{
 					closest = t;
-					distance = Point2D.distance(currentCity.getX(), currentCity.getY(), t.getX(), t.getY());
+					distance = dist;
 				}
 				// If there is another city after it check if that is closer.
 				if (i+1 < cities.size())
 				{
 					Point2D n = cities.get(i+1);
-					if(Point2D.distance(currentCity.getX(), currentCity.getY(), n.getX(), n.getY()) < distance)
+					dist = Point2D.distance(currentCity.getX(), currentCity.getY(), n.getX(), n.getY());
+					if( dist < distance)
 					{
 						closest = n;
 						distance = Point2D.distance(currentCity.getX(), currentCity.getY(), n.getX(), n.getY());

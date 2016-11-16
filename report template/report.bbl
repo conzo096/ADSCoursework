@@ -1,3 +1,7 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{\protect\citename{contributors }2016}
+
+\bibitem[\protect\citename{contributors }2016]{tsp}
+{\sc contributors, W.}, 2016.
+\newblock Travelling salesman problem.
 
 \end{thebibliography}

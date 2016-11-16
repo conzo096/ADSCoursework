@@ -1,5 +1,6 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: report.aux
 The style file: acmsiggraph.bst
-I found no \citation commands---while reading file report.aux
 Database file #1: report.bib
-(There was 1 error message)
+Warning--entry type for "TSP" isn't style-file defined
+--line 5 of file report.bib
+(There was 1 warning)
