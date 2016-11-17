@@ -32,12 +32,12 @@ public class Main
 		
 		    // ---- Only run one method for algorithm below this or results are inaccurate! ---- \\
 		   
-		     results = NearestNeighbourAlgorithm.NearestNeighbour(cities);
+		    // results = NearestNeighbourAlgorithm.NearestNeighbour(cities);
 		    // results = NearestNeighbourAlgorithm.NearestNeighbourRandStart(cities);
 		    // results = NearestNeighbourAlgorithm.NearestNeighbourShuffle(cities);
 		    // results = NearestNeighbourAlgorithm.NearestNeighbourSQ(cities);
 		    // results = NearestNeighbourAlgorithm.NearestNeighbourRewrite(cities);
-		    // results = NearestNeighbourAlgorithm.NearestXNeighbour(cities);
+		     results = NearestNeighbourAlgorithm.NearestXNeighbour(cities);
 		    // results = NearestNeighbourAlgorithm.NearestYNeighbour(cities);
 		    
 		    // Stop time once algorithm is finished.

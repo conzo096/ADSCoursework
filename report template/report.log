@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.11.16)  17 NOV 2016 15:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.11.17)  17 NOV 2016 20:44
 entering extended mode
 **./report.tex
 (report.tex
@@ -764,21 +764,21 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 29.
  (report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 41.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 40.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -813,7 +813,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box50
-Package hyperref Info: Link coloring ON on input line 41.
+Package hyperref Info: Link coloring ON on input line 40.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -823,55 +823,52 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count154
 )
-LaTeX Info: Redefining \ref on input line 41.
-LaTeX Info: Redefining \pageref on input line 41.
-LaTeX Info: Redefining \nameref on input line 41.
+LaTeX Info: Redefining \ref on input line 40.
+LaTeX Info: Redefining \pageref on input line 40.
+LaTeX Info: Redefining \nameref on input line 40.
 
 ABD: EveryShipout initializing macros
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.14} into 
 your preamble.
- on input line 41.
+ on input line 40.
 
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 43.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 42.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 43.
+(Font)              scaled to size 13.24796pt on input line 42.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 43.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 42.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 13.24796pt on input line 43.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 43.
+(Font)              scaled to size 13.24796pt on input line 42.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 42.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 43.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 42.
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <6> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 43.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 42.
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 11.03998pt on input line 47.
+(Font)              scaled to size 11.03998pt on input line 46.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 47.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 46.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 11.03998pt on input line 47.
+(Font)              scaled to size 11.03998pt on input line 46.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 54.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 53.
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 90.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 89.
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 104.
+(Font)              scaled to size 8.27998pt on input line 103.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 104.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 103.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 8.27998pt on input line 104.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+(Font)              scaled to size 8.27998pt on input line 103.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -889,95 +886,134 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<images/OCheatSheet.png, id=34, 1237.62375pt x 843.15pt>
+<images/OCheatSheet.png, id=40, 1237.62375pt x 843.15pt>
 File: images/OCheatSheet.png Graphic file (type png)
 
 <use images/OCheatSheet.png>
-Package pdftex.def Info: images/OCheatSheet.png used on input line 282.
+Package pdftex.def Info: images/OCheatSheet.png used on input line 287.
 (pdftex.def)             Requested size: 240.94499pt x 164.13698pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[2] [3 <./images/OCheatSheet.png>]
-Overfull \hbox (5.96165pt too wide) in paragraph at lines 677--678
+[2] [3 <./images/OCheatSheet.png>] [4]
+Overfull \hbox (5.96165pt too wide) in paragraph at lines 686--687
 [][] 
  []
 
-[4]
 
-Package pgfplots Warning: You have an axis with empty range (in direction y). R
-eplacing it with a default range and clearing all plots. on input line 709.
-
- [warning /pgfplots/warning/empty range cleared axis]
-
-Package pgfplots Warning: You have an axis with empty range (in direction y). R
-eplacing it with a default range and clearing all plots. on input line 722.
-
- [warning /pgfplots/warning/empty range cleared axis]
-
-Package pgfplots Warning: You have an axis with empty range (in direction y). R
-eplacing it with a default range and clearing all plots. on input line 730.
-
- [warning /pgfplots/warning/empty range cleared axis]
-
-Package pgfplots Warning: You have an axis with empty range (in direction y). R
-eplacing it with a default range and clearing all plots. on input line 738.
-
- [warning /pgfplots/warning/empty range cleared axis]
-
-Package pgfplots Warning: You have an axis with empty range (in direction y). R
-eplacing it with a default range and clearing all plots. on input line 746.
-
- [warning /pgfplots/warning/empty range cleared axis]
-
-Underfull \hbox (badness 10000) in paragraph at lines 723--748
-[][]
+Overfull \hbox (19.52449pt too wide) in paragraph at lines 751--752
+[][] 
  []
 
+[5] <images/rl5915unsorted.png, id=84, 405.01312pt x 253.69781pt>
+File: images/rl5915unsorted.png Graphic file (type png)
 
-Underfull \hbox (badness 10000) in paragraph at lines 723--748
-[]
- []
+<use images/rl5915unsorted.png>
+Package pdftex.def Info: images/rl5915unsorted.png used on input line 767.
+(pdftex.def)             Requested size: 240.94499pt x 150.93077pt.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 723--748
-[]
- []
-
-[5] <images/rl5915nn.png, id=79, 405.76593pt x 254.45062pt>
+<images/rl5915nn.png, id=85, 405.76593pt x 254.45062pt>
 File: images/rl5915nn.png Graphic file (type png)
 
 <use images/rl5915nn.png>
-Package pdftex.def Info: images/rl5915nn.png used on input line 760.
+Package pdftex.def Info: images/rl5915nn.png used on input line 772.
 (pdftex.def)             Requested size: 240.94499pt x 151.09521pt.
- (report.bbl (report.brf)
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/rl5915nx.png, id=86, 814.54312pt x 513.41812pt>
+File: images/rl5915nx.png Graphic file (type png)
+
+<use images/rl5915nx.png>
+Package pdftex.def Info: images/rl5915nx.png used on input line 779.
+(pdftex.def)             Requested size: 240.94499pt x 151.87224pt.
+
+<images/rl5915ny.png, id=87, 410.2828pt x 259.7203pt>
+File: images/rl5915ny.png Graphic file (type png)
+
+<use images/rl5915ny.png>
+Package pdftex.def Info: images/rl5915ny.png used on input line 785.
+(pdftex.def)             Requested size: 240.94499pt x 152.52426pt.
+ [6 <./images/rl5915unsorted.png> <./images/rl5915nn.png> <./images/rl5915nx.pn
+g> <./images/rl5915ny.png>] [7
+
+]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 798.
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Overfull \hbox (61.10936pt too wide) in paragraph at lines 1501--1501
+[]\OT1/pcr/m/n/9 // Loop is for repeatability. When recording results remove sl
+owest and fastest extremes for me accuracy.[] 
+ []
+
+
+Overfull \hbox (55.70937pt too wide) in paragraph at lines 1501--1501
+[]\OT1/pcr/m/n/9 *  When recording the results from Random start and Shuffle I 
+stored and calculated the average by hand.[] 
+ []
+
+[8
+
+] [9]
+Overfull \hbox (82.70934pt too wide) in paragraph at lines 1501--1501
+[]\OT1/pcr/m/n/9 // By turning the results into a set I can ensure that there a
+re no duplicates by comparing to original size.[] 
+ []
+
+[10] [11] [12] [13]
+Overfull \hbox (12.50941pt too wide) in paragraph at lines 1501--1501
+[]\OT1/pcr/m/n/9 // This method is not efficient. In theory it is supposed to h
+alf the iterations of the for loop[] 
+ []
+
+[14] [15] [16]
+Overfull \hbox (1.70943pt too wide) in paragraph at lines 1501--1501
+[]\OT1/pcr/m/n/9 System.out.println("Original size: " +original.size() + " | Re
+sult size: "+resultList.size());[] 
+ []
+
+
+Overfull \hbox (61.10936pt too wide) in paragraph at lines 1501--1501
+[]\OT1/pcr/m/n/9 // Loop is for repeatability. When recording results remove sl
+owest and fastest extremes for me accuracy.[] 
+ []
+
+[17]
+Overfull \hbox (55.70937pt too wide) in paragraph at lines 1501--1501
+[]\OT1/pcr/m/n/9 *  When recording the results from Random start and Shuffle I 
+stored and calculated the average by hand.[] 
+ []
+
+(report.bbl (report.brf)
 \tf@brf=\write4
 \openout4 = `report.brf'.
 
-) [6 <./images/rl5915nn.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 778.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 778.
-(report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 778.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 778.
+) [18]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1507.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1507.
+ (report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1507.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1507.
+
 Package rerunfilecheck Info: File `report.brf' has not changed.
 (rerunfilecheck)             Checksum: 3CE8DE83333174A27F778D5AB8BE318F;36.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 778.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1507.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 28201 strings out of 493335
- 675969 string characters out of 3136670
- 920835 words of memory out of 3000000
- 31240 multiletter control sequences out of 15000+200000
- 26038 words of font info for 53 fonts, out of 3000000 for 9000
+ 28269 strings out of 493335
+ 676942 string characters out of 3136670
+ 916835 words of memory out of 3000000
+ 31284 multiletter control sequences out of 15000+200000
+ 26553 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,19n,100p,888b,19952s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.
@@ -988,13 +1024,14 @@ C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Prog
 ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program
  Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
-e1/urw/times/utmri8a.pfb>
-Output written on report.pdf (6 pages, 236306 bytes).
+les (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/ti
+mes/utmri8a.pfb>
+Output written on report.pdf (18 pages, 412949 bytes).
 PDF statistics:
- 137 PDF objects out of 1000 (max. 8388607)
- 49 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 206 PDF objects out of 1000 (max. 8388607)
+ 65 named destinations out of 1000 (max. 500000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
 
