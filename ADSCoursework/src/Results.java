@@ -59,7 +59,7 @@ public class Results
 	
 	public void PrintResults(ArrayList<Point2D> original)
 	{
-		 // Check if results are valid. 
+		 // Check if results are valid. If not display sizes of both lists.
 		if (Util.CheckLists(original,resultList))
 		{
 			for(int i =0; i < times.size();i++)

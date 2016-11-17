@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-
+/* This utility class is here to provide helper methods*/
 public class Util
 {
 	public static double routeLength(ArrayList<Point2D> cities)

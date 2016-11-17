@@ -115,6 +115,8 @@ public class NearestNeighbourAlgorithm
 	
 	public static ArrayList<Point2D> NearestNeighbourShuffle(ArrayList<Point2D> inCities)
 	{
+		/* NOTE: THIS METHOD TECHNICALLY IS NO DIFFERENT FROM CHOOSING A RANDOM START*/
+		/* This is due to the fact the list is always sorted by nearest neighbour. */
 		// This method randomises the list. Results are unpredictable.
 		ArrayList<Point2D> cities = new ArrayList<Point2D>(inCities);
 		Collections.shuffle(cities);

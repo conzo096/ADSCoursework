@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+/*This class is used to visually display the route calculated by the algorithm*/
 
 public class DrawRoute extends JPanel
 {
@@ -41,6 +42,7 @@ public class DrawRoute extends JPanel
 			{
                 super.paintComponent(g);
                 g.setColor(Color.BLACK);
+             
                 g.drawString("Scaled down by 18.",50,50);
                 g.setColor(Color.BLUE);
                 g.drawPolygon(poly);

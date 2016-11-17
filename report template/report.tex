@@ -46,7 +46,7 @@ Algorithms and Data Structures (SET09117)}
 
 \begin{abstract}
 
-The purpose of this report is to find out the efficiency of the nearest neighbour algorithm in order to solve a  variety of travelling salesman problems. This report is also looking how possible variations and optimization techniques such as just searching on an individual axis in order to improve upon the algorithm. ADD SENTENCE SUMMARY. 
+The purpose of this report is to find out the efficiency of the nearest neighbour algorithm in order to solve a  variety of travelling salesman problems. This report is also looking how possible variations and optimization techniques such as just searching on an individual axis would impact on the performance of the algorithm. From the results it can be concluded that is quicker to compare on a single axis and to reduce the number of mathematical operations used. Reducing code in the loop also improves the algorithm significantly. Out of the different variations of the nearest neighbour the most practical one to use would be the nearest neighbour squared.
 \end{abstract}
 
 
@@ -58,22 +58,38 @@ The purpose of this report is to find out the efficiency of the nearest neighbou
 
 This report is looking at possible improvements of the nearest neighbour algorithm in order to solve the travelling salesman problem (commonly referred to as tsp). The tsp essentially is a question which asks 'Given a set of cities, what is the shortest route possible that visits each city only once and will return to the origin\cite{tsp}.
 
-The main issue with the travelling salesman problem is the possible routes available grows exponential with size. In a tsp with 10 cities there is 181,400 possible routes. This is calculated using the formula:
+The main issue with the travelling salesman problem is the possible routes available to traverse grows exponential with size. An example of this is a tsp with 10 cities there is 181,400 possible routes. This is calculated using the formula:
  \begin{equation}
 P =  \frac{(N-1)!}{2}
 \end{equation}
 where~$P$ is number of possibilities and~$N$ is number of cities (points).
 
+
 Only half of the possible routes are counted as each route has an equal reverse route that has the exact same distance. The ~$P$-1 is there since the starting city is defined and the other cities can have different permutations.
 
+\begin{center}
+	\begin{tabular}{| l | l | l | l |}
+		\hline
+		Size& Possible routes\\ \hline
+		5 & 12 \\ \hline
+		10 & 181400 \\ \hline
+		12 & 19958400 \\ \hline
+		14 & 3113510400 \\ \hline
+	\end{tabular}
+\end{center}
+
+As seen from the table above it is clear that the is an exponential growth in the number of possible routes as the number of cities in the list increases.
+
 \section{Method}
-One possible way of computing a tsp is by using the nearest neighbour algorithm. This involves sorting the list so that the next city in the list is the closest city to the current city. 
+
+One of the most common ways to get a general solution to the travelling salesman problem is to utilise the nearest neighbour algorithm. The aim of this algorithm is to sort the list so that the next element is the closest one to the current city. The limiting factor of this algorithm is how fast it can do the comparisons between the current city to the other cities to find the closest one.
+
 
 \underline{Pros}
 \begin{itemize}
 	\item Easy to implement.
 	\item Very quick results for small data sizes.
-	\item 
+	\item Simple to calculate the big O notation.
 	
 \end{itemize}
 
@@ -85,10 +101,11 @@ One possible way of computing a tsp is by using the nearest neighbour algorithm.
 	\item Brute force method.
 \end{itemize}
 
-\underline{Pseudocode}
+\paragraph{Pseudocode} \hfill
 
+In this section the pseudo code for all of the different variations of the algorithm that are aimed to be implemented are available.
 
-\begin{algorithm}	
+	\begin{algorithm}[h]	
 	\KwData{ArrayList input}
 	\KwResult{returns Nearest Neighbour list}
 	current city = input first value\\
@@ -107,13 +124,13 @@ One possible way of computing a tsp is by using the nearest neighbour algorithm.
 	}
 \caption{Nearest neighbour algorithm}
 
-\end{algorithm}
+\end{algorithm}\hfill
 
-An improvement to the algorithm can be made by using the distance squared function instead of the distance function. To improve upon this more the result from distance squared is stored so it is not needed to be computed again.
+An improvement to the algorithm can be made by using the distance squared function instead of the distance function. To improve upon this more the result from distance squared is stored so it is not needed to be computed again.\hfill
 
-\begin{algorithm}	
+\begin{algorithm}[h]	
 	\KwData{ArrayList input}
-	\KwResult{returns Nearest Neighbour list}
+	\KwResult{returns Nearest Neighbour squared list}
 	current city = input first value\\
 	\While{cities in input}{
 		add current city to result\\
@@ -130,12 +147,12 @@ An improvement to the algorithm can be made by using the distance squared functi
 		current city = closest city\\
 	}
 \caption{Nearest Neighbour squared}
-\end{algorithm}
+\end{algorithm}\hfill
 
 An attempt of rewriting the algorithm was done. The aim of this was to try and minimise the number of iterations in the for loop by comparing the current distance against the next city in the list.
-\begin{algorithm}
+\begin{algorithm}[h]
 	\KwData{ArrayList input}
-	\KwResult{returns Nearest Neighbour list}
+	\KwResult{returns Nearest Neighbour rewritten list}
 	current city = input first value\\
 	\While{cities in input}
 	{
@@ -166,12 +183,60 @@ An attempt of rewriting the algorithm was done. The aim of this was to try and m
 \end{algorithm}
 
 
+Java has a random function available. One variation was crossing a random starting position in order to provide a better result. 
+
+
+	\begin{algorithm}[h]	
+		\KwData{ArrayList input}
+		\KwResult{returns Nearest Neighbour random start list}
+		current city = Random value from input list\\
+		\While{cities in input}{
+			add current city to result\\
+			distance = max value\\
+			\ForEach{city in input}
+			{
+				\If{distance(current city, city) $<$ distance}{
+					closest city = city\\
+					distance = distance(current point,city)\\
+				}
+			}
+			remove closest city from input\\
+			current city = closest city\\
+		}
+		\caption{Nearest neighbour random start algorithm}
+	\end{algorithm}	
+Taking advantage of the collections type it is possible to 	randomise the entire input arrayList before using the nearest neighbour algorithm.
+		
+
+\begin{algorithm}[h]	
+	\KwData{ArrayList input}
+	\KwResult{returns Nearest Neighbour shuffle list}
+	input = randomise(input)
+	current city = input first value\\
+	\While{cities in input}{
+		add current city to result\\
+		distance = max value\\
+		\ForEach{city in input}
+		{
+			\If{distance(current city, city) $<$ distance}{
+				closest city = city\\
+				distance = distance(current point,city)\\
+			}
+		}
+		remove closest city from input\\
+		current city = closest city\\
+	}
+	\caption{Nearest neighbour shuffle algorithm}
+\end{algorithm}
+
+For the algorithms that use random features (random start and shuffle) it is important to note that 1. They are not reliable methods to calculate a suitable route and secondly given enough time the algorithm could be looped and compared to find out if the new results beat the previous results and if it does replace the results with the new results. However as it is unrealiable it was decided to be implemented to see how much it would decrease or increase performance and was not focusing on providing the best route possible (which could happen on its first iteration or it could never happen). 
+
 
 Another variation of the nearest neighbour is checking for the closest point on a given axis. As the points are in two dimensional space this means checking along the x axis and y axis. The aim of this was to try and completely remove mathematical operations and only use simple boolean operations in order to get a route in quick computation time. However this may result in very long routes due to point distributions.
 
-\begin{algorithm}
+\begin{algorithm}[h]
 	\KwData{ArrayList input}
-	\KwResult{returns Nearest Neighbour list}
+	\KwResult{returns Nearest x Neighbour list}
 	current city = input first value\\
 	\While{cities in input}{
 		add current city to result\\
@@ -190,9 +255,9 @@ Another variation of the nearest neighbour is checking for the closest point on 
 	\caption{Nearest x neighbour algorithm}
 \end{algorithm}
 
-\begin{algorithm}
+\begin{algorithm}[h]
 	\KwData{ArrayList input}
-	\KwResult{returns Nearest Neighbour list}
+	\KwResult{returns Nearest y Neighbour list}
 	current city = input first value\\
 	\While{cities in input}{
 		add current city to result\\
@@ -211,27 +276,47 @@ Another variation of the nearest neighbour is checking for the closest point on 
 	\caption{Nearest y neighbour algorithm}
 \end{algorithm}
 
+\paragraph{O notation} \hfill
+ 
+\begin{figure}[h]
+	\includegraphics[width=\columnwidth]{images/OCheatSheet.png}
+	\caption{Approximate graph for big O complexity.}
+	\label{O}
+\end{figure}
+An effective way to calculate the complexity of an algorithm is to find out what the O notation of the algorithm is. The O notation being used to calculate the complexity is Big O which is used to specifically used to describe the worst-case scenario of an algorithm. 
+Figure 1 shows the rough guidelines for big O complexity. 
+
+To calculate the big O notation of an algorithm a series of rules are followed.
+\begin{itemize}
+	\item Input will be called n.
+	\item Measure the number of "touches" (interactions with n).
+	\item It is the worst case scenario.
+	
+\end{itemize}
+
+The O notation if \begin{math}{n^2} \end{math}
 
 
-After looking more into the nearest algorithm it was noted that the distance function could be making the algorithm running slower than it needs to be. Therefore one of the variations of the algorithm is the exact same as the nearest neighbour apart from using distance squared instead of distance to avoid having to use a square root (best case was it would only be used once, worst case is being used twice.) Also storing this result would mean that that the function would only ever be called once in each iteration of the for loop. 
 
+It is important to note that complexity has an effect on the performance however performance does not affect the complexity of an algorithm. The reason the specifications of the computer being used is because performance is also affected by hardware.
 
 A limitation of this solution is the file reader. It can only read in certain travelling salesman problems which limits the variety of the results obtained. 
 \section{Results}
 
-The algorithms were tested using Eclipse Neon.1 java development environment. Also the machine specifications are as follows:
+The algorithms were tested using Eclipse Neon.1 Java development environment. Also the machine specifications are as follows:
 \begin{itemize}
 \item Processor:	Intel i7-4790K @ 4.00GHz
 \item Graphics card:	GeForce GTX 980	4GB GDDR5
 \item Ram:	16.0G
-\item Running from same hard drive each time. 
+
 \end{itemize}
 
-For each data set each algorithm
-Also while collecting the results extremes on both sides were removed in order to create a more accurate average. This was to take into account Java garbage collection.
+When collecting the results it was important to ensure that they are all treated equally with no bias. Therefore for each data set each algorithm is ran an equal number of times. For this report 5 times was suitable due to the number of data sets and number of variations of the algorithm. The slowest and fastest times were removed and ran again to make the results a little more accurate. This was to take into account of Java garbage collection. Also the algorithms were ran one at a time to ensure there was no heap space competition. Lastly no background applications were running to attempt to minimise any performance issues due to resource competition because of background applications. Another important thing to note is the algorithms were all ran on the same computer to ensure that the hardware specifications remained the same and would not skew the results.
+
+
 \paragraph{Data set rl5915} \hfill
 
-rl5915 has a size of 5915 and when unsorted has a total distance of 1014504.71.
+rl5915 has a size of 5915 and when unsorted has a total distance of 1014504.71m.
 
 \begin{center}	
 	
@@ -571,13 +656,14 @@ Berlin52 has a size of 52 and when unsorted has a total distance of 22205.61m.
 	\end{tabular}
 \end{center}
 
-\paragraph{Graphs}
+\paragraph{Graphs} \hfill
 
 The following graphs show the relation between the data size and taken to compute the route.
+
 \begin{tikzpicture}
 \begin{axis}[ 
-title = nearest neighbour,
-xlabel=$Size)$,
+title = Comparrison between three versions of nearest neighbour,
+xlabel=$Size$,
 ylabel={$Time (ms)$},
 legend pos=north west
 ] 
@@ -597,14 +683,20 @@ Distance = \sqrt{x^2 + y^2}
 \end{equation}
 Where $x$ is (point A.x - point B.x) and $y$ is (point A.y - point B.y).
 
+Therefore as the number of points increased the number of times this calculation also increased. As mathematical operations (especially square rooting) it clearly has a hit to performance like it is shown in the graph. Another reason for the nearest neighbour squared having quicker times is because the worst case scenario for the distance calculation has been reduced to one. In the original calculation the worst case scenario was two. This means that the number of times the operation is used is decreased significantly as the number of elements being sorted increases.
+
 
 
 \begin{tikzpicture}
 \begin{axis}[ 
-title = Optimised Nearest Neighbour (SQ), 
+title = Comparrison between nearest x and nearest y, 
 xlabel=$Size$,
-ylabel={$Average Time$}
+ylabel={$Time(ms)$}
 ] 
+\addplot [blue,mark=*] coordinates {(52,0.45) (1304,9) (1323,11) (1889,23) (5915,111) (5934,111)};
+\addplot [green,mark=*] coordinates {(52,0.59) (1304,23) (1323,26) (1889,37) (5915,323) (5934,325)};
+\addlegendentry{nearest x}
+\addlegendentry{nearest y}
 \end{axis}
 \end{tikzpicture}
 
@@ -667,13 +759,16 @@ The route when it is unsorted looks like:
 \begin{figure}
 \includegraphics[width=\columnwidth]{images/rl5915nn.png}
 \end{figure}
+
+
+
 \section{Conclusion}
 
-Due to the nature of the nearest neighbour algorithm some of the variations implemented would only result in a difference in time taken to compute the algorithm. However it is possible to compare the nearest neighbour with nearest x and nearest y as they produce different routes. 
+
+To conclude this report, with all the variations tested the best one overall was the nearest neighbour squared. This provides the same distance as the original nearest neighbour however the improvement in the time taken to compute the route has improved significantly. What is interesting to note is that even though the nearest x also had very fast computations majority of the time the route it returned was worse than just leaving the list unsorted. 
 
 
 
-To summarise what has been found from this investigation of the nearest neighbour algorithm in order to solve the travelling salesman problem. The algorithm provides a decent solution in a relatively quick time as long as there is a small 
 % \section*{Acknowledgements}
 
 
