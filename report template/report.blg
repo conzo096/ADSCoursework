@@ -3,4 +3,8 @@ The style file: acmsiggraph.bst
 Database file #1: report.bib
 Warning--entry type for "TSP" isn't style-file defined
 --line 5 of file report.bib
-(There was 1 warning)
+Warning--entry type for "nn" isn't style-file defined
+--line 14 of file report.bib
+Warning--entry type for "bigo" isn't style-file defined
+--line 23 of file report.bib
+(There were 3 warnings)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.11.17)  17 NOV 2016 20:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.11.18)  18 NOV 2016 12:49
 entering extended mode
 **./report.tex
 (report.tex
@@ -861,18 +861,19 @@ LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 (Font)              scaled to size 11.03998pt on input line 46.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 53.
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--89
+
+ []
+
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 89.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 93.
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 103.
+(Font)              scaled to size 8.27998pt on input line 108.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 103.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 108.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 8.27998pt on input line 103.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+(Font)              scaled to size 8.27998pt on input line 108.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -886,73 +887,67 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/OCheatSheet.png, id=40, 1237.62375pt x 843.15pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2] <images/OCheatSheet.png, id=60, 1237.62375pt x 843.15pt>
 File: images/OCheatSheet.png Graphic file (type png)
 
 <use images/OCheatSheet.png>
-Package pdftex.def Info: images/OCheatSheet.png used on input line 287.
+Package pdftex.def Info: images/OCheatSheet.png used on input line 293.
 (pdftex.def)             Requested size: 240.94499pt x 164.13698pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[2] [3 <./images/OCheatSheet.png>] [4]
-Overfull \hbox (5.96165pt too wide) in paragraph at lines 686--687
+ [3 <./images/OCheatSheet.png>] [4]
+Overfull \hbox (5.96165pt too wide) in paragraph at lines 691--692
 [][] 
  []
 
-
-Overfull \hbox (19.52449pt too wide) in paragraph at lines 751--752
+[5]
+Overfull \hbox (19.52449pt too wide) in paragraph at lines 757--758
 [][] 
  []
 
-[5] <images/rl5915unsorted.png, id=84, 405.01312pt x 253.69781pt>
+<images/rl5915unsorted.png, id=90, 405.01312pt x 253.69781pt>
 File: images/rl5915unsorted.png Graphic file (type png)
 
 <use images/rl5915unsorted.png>
-Package pdftex.def Info: images/rl5915unsorted.png used on input line 767.
+Package pdftex.def Info: images/rl5915unsorted.png used on input line 773.
 (pdftex.def)             Requested size: 240.94499pt x 150.93077pt.
 
-<images/rl5915nn.png, id=85, 405.76593pt x 254.45062pt>
+<images/rl5915nn.png, id=91, 405.76593pt x 254.45062pt>
 File: images/rl5915nn.png Graphic file (type png)
 
 <use images/rl5915nn.png>
-Package pdftex.def Info: images/rl5915nn.png used on input line 772.
+Package pdftex.def Info: images/rl5915nn.png used on input line 778.
 (pdftex.def)             Requested size: 240.94499pt x 151.09521pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<images/rl5915nx.png, id=86, 814.54312pt x 513.41812pt>
+<images/rl5915nx.png, id=92, 814.54312pt x 513.41812pt>
 File: images/rl5915nx.png Graphic file (type png)
 
 <use images/rl5915nx.png>
-Package pdftex.def Info: images/rl5915nx.png used on input line 779.
+Package pdftex.def Info: images/rl5915nx.png used on input line 785.
 (pdftex.def)             Requested size: 240.94499pt x 151.87224pt.
 
-<images/rl5915ny.png, id=87, 410.2828pt x 259.7203pt>
+<images/rl5915ny.png, id=93, 410.2828pt x 259.7203pt>
 File: images/rl5915ny.png Graphic file (type png)
 
 <use images/rl5915ny.png>
-Package pdftex.def Info: images/rl5915ny.png used on input line 785.
+Package pdftex.def Info: images/rl5915ny.png used on input line 791.
 (pdftex.def)             Requested size: 240.94499pt x 152.52426pt.
  [6 <./images/rl5915unsorted.png> <./images/rl5915nn.png> <./images/rl5915nx.pn
-g> <./images/rl5915ny.png>] [7
-
-]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 798.
+g> <./images/rl5915ny.png>] [7]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 809.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Overfull \hbox (61.10936pt too wide) in paragraph at lines 1501--1501
+Overfull \hbox (61.10936pt too wide) in paragraph at lines 1444--1444
 []\OT1/pcr/m/n/9 // Loop is for repeatability. When recording results remove sl
 owest and fastest extremes for me accuracy.[] 
  []
 
 
-Overfull \hbox (55.70937pt too wide) in paragraph at lines 1501--1501
+Overfull \hbox (55.70937pt too wide) in paragraph at lines 1444--1444
 []\OT1/pcr/m/n/9 *  When recording the results from Random start and Shuffle I 
 stored and calculated the average by hand.[] 
  []
@@ -960,59 +955,47 @@ stored and calculated the average by hand.[]
 [8
 
 ] [9]
-Overfull \hbox (82.70934pt too wide) in paragraph at lines 1501--1501
+Overfull \hbox (82.70934pt too wide) in paragraph at lines 1444--1444
 []\OT1/pcr/m/n/9 // By turning the results into a set I can ensure that there a
 re no duplicates by comparing to original size.[] 
  []
 
 [10] [11] [12] [13]
-Overfull \hbox (12.50941pt too wide) in paragraph at lines 1501--1501
+Overfull \hbox (12.50941pt too wide) in paragraph at lines 1444--1444
 []\OT1/pcr/m/n/9 // This method is not efficient. In theory it is supposed to h
 alf the iterations of the for loop[] 
  []
 
 [14] [15] [16]
-Overfull \hbox (1.70943pt too wide) in paragraph at lines 1501--1501
+Overfull \hbox (1.70943pt too wide) in paragraph at lines 1444--1444
 []\OT1/pcr/m/n/9 System.out.println("Original size: " +original.size() + " | Re
 sult size: "+resultList.size());[] 
- []
-
-
-Overfull \hbox (61.10936pt too wide) in paragraph at lines 1501--1501
-[]\OT1/pcr/m/n/9 // Loop is for repeatability. When recording results remove sl
-owest and fastest extremes for me accuracy.[] 
- []
-
-[17]
-Overfull \hbox (55.70937pt too wide) in paragraph at lines 1501--1501
-[]\OT1/pcr/m/n/9 *  When recording the results from Random start and Shuffle I 
-stored and calculated the average by hand.[] 
  []
 
 (report.bbl (report.brf)
 \tf@brf=\write4
 \openout4 = `report.brf'.
 
-) [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1507.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1507.
+) [17]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1450.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1450.
  (report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1507.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1507.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1450.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1450.
 
 Package rerunfilecheck Info: File `report.brf' has not changed.
-(rerunfilecheck)             Checksum: 3CE8DE83333174A27F778D5AB8BE318F;36.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1507.
+(rerunfilecheck)             Checksum: BF5115A1024788658A1EA48E71628024;159.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1450.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 28269 strings out of 493335
- 676942 string characters out of 3136670
- 916835 words of memory out of 3000000
- 31284 multiletter control sequences out of 15000+200000
+ 28279 strings out of 493335
+ 677020 string characters out of 3136670
+ 913835 words of memory out of 3000000
+ 31292 multiletter control sequences out of 15000+200000
  26553 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,19n,100p,888b,19952s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1029,9 +1012,9 @@ les (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)
 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/ti
 mes/utmri8a.pfb>
-Output written on report.pdf (18 pages, 412949 bytes).
+Output written on report.pdf (17 pages, 414576 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 65 named destinations out of 1000 (max. 500000)
+ 211 PDF objects out of 1000 (max. 8388607)
+ 67 named destinations out of 1000 (max. 500000)
  38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

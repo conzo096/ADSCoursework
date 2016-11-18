@@ -35,7 +35,7 @@ Edinburgh Napier University\\
 Algorithms and Data Structures (SET09117)}
 \pdfauthor{Conner Weatherston}
 
-\keywords{travelling salesman problem, nearest neighbour, optimisation, algorithms}
+\keywords{travelling salesman problem, nearest neighbour, optimisation, algorithms, big o}
 
 \begin{document}
 
@@ -57,14 +57,14 @@ The purpose of this report is to find out the efficiency of the nearest neighbou
 
 This report is looking at possible improvements of the nearest neighbour algorithm in order to solve the travelling salesman problem (commonly referred to as tsp). The tsp essentially is a question which asks 'Given a set of cities, what is the shortest route possible that visits each city only once and will return to the origin\cite{tsp}.
 
-The main issue with the travelling salesman problem is the possible routes available to traverse grows exponential with size. An example of this is a tsp with 10 cities there is 181,400 possible routes. This is calculated using the formula:
+The main issue with the travelling salesman problem is the possible routes available to traverse grows exponential with size. An example of this is in a tsp with 10 cities there are 181,400 possible routes that can be taken. This number is calculated using the formula:
  \begin{equation}
 P =  \frac{(N-1)!}{2}
 \end{equation}
 where~$P$ is number of possibilities and~$N$ is number of cities (points).
 
 
-Only half of the possible routes are counted as each route has an equal reverse route that has the exact same distance. The ~$P$-1 is there since the starting city is defined and the other cities can have different permutations.
+Only half of the possible routes are counted as each route has an equal reverse route that has the exact same distance. The ~$P$-1 is there since the starting city is always defined and the other cities can have different permutations.
 
 \begin{center}
 	\begin{tabular}{| l | l | l | l |}
@@ -77,29 +77,34 @@ Only half of the possible routes are counted as each route has an equal reverse 
 	\end{tabular}
 \end{center}
 
-As seen from the table above it is clear that the is an exponential growth in the number of possible routes as the number of cities in the list increases.
+As seen from the table above it is clear that the is an exponential growth in the number of possible routes as the number of cities in the list increases. Due to this brute force methods that search through each possible route is not possible in large data sets. Therefore algorithms are needed that provide a decent route in a reasonable period of time. 
 
 \section{Method}
 
 One of the most common ways to get a general solution to the travelling salesman problem is to utilise the nearest neighbour algorithm. The aim of this algorithm is to sort the list so that the next element is the closest one to the current city. The limiting factor of this algorithm is how fast it can do the comparisons between the current city to the other cities to find the closest one.
 
-
+\begin{figure}[h]
+	
+\cite{nn} provides a quick pro and con list for the nearest neighbour algorithm.\\
+\begin{center}
 \underline{Pros}
+\end{center}
 \begin{itemize}
 	\item Easy to implement.
 	\item Very quick results for small data sizes.
 	\item Simple to calculate the big O notation.
 	
 \end{itemize}
-
+\begin{center}
 \underline{Cons}
+\end{center}
 \begin{itemize}
 	\item Requires large storage of data. 
 	\item Large searching problems (Have to continually iterate over list until it is empty.)
 	\item Assumptions are made about distance (Some routes may be infeasible).
-	\item Brute force method.
 \end{itemize}
-
+\caption{Pros and cons of nearest neighbour.}
+\end{figure}
 \paragraph{Pseudocode} \hfill
 
 In this section the pseudo code for all of the different variations of the algorithm that are aimed to be implemented are available. Algorithm \ref{nn} provides the pseudocode for nearest neighbour.
@@ -259,7 +264,7 @@ Another variation of the nearest neighbour is checking for the closest point on 
 	\label{nnx}
 \end{algorithm}
 
-\begin{algorithm}[tbh]
+\begin{algorithm}[h]
 	\KwData{ArrayList input}
 	\KwResult{returns Nearest y Neighbour list}
 	current city = input first value\\
@@ -281,6 +286,7 @@ Another variation of the nearest neighbour is checking for the closest point on 
 	\label{nny}
 \end{algorithm}
 
+\pagebreak
 \paragraph{O notation} \hfill
  
 \begin{figure}[h]
@@ -289,7 +295,7 @@ Another variation of the nearest neighbour is checking for the closest point on 
 	\label{O}
 \end{figure}
 An effective way to calculate the complexity of an algorithm is to find out what the O notation of the algorithm is. The O notation being used to calculate the complexity is Big O which is used to specifically used to describe the worst-case scenario of an algorithm. 
-Figure 1 shows the rough guidelines for big O complexity. 
+Figure \ref{O} shows the rough guidelines for big O complexity (From \cite{bigo}). 
 
 To calculate the big O notation of an algorithm a series of rules are followed.
 \begin{itemize}
@@ -299,7 +305,7 @@ To calculate the big O notation of an algorithm a series of rules are followed.
 	
 \end{itemize}
 
-The O notation if \begin{math}{n^2} \end{math}
+The O notation of the nearest neighbour is \begin{math}{n^2} \end{math}. Using the chart for reference it can be judged before results that the complexity is .
 
 
 
@@ -319,7 +325,6 @@ The algorithms were tested using Eclipse Neon.1 Java development environment. Al
 When collecting the results it was important to ensure that they are all treated equally with no bias. Therefore for each data set each algorithm is ran an equal number of times. For this report 5 times was suitable due to the number of data sets and number of variations of the algorithm. The slowest and fastest times were removed and ran again to make the results a little more accurate. This was to take into account of Java garbage collection. Also the algorithms were ran one at a time to ensure there was no heap space competition. Lastly no background applications were running to attempt to minimise any performance issues due to resource competition because of background applications. Another important thing to note is the algorithms were all ran on the same computer to ensure that the hardware specifications remained the same and would not skew the results.
 /paragraph{}
 The reason for the multiple data sets was to ensure that the solution was valid over a wide range of problems.
-
 \paragraph{Data set Berlin52} \hfill
 
 berlin52 has a size of 52 and when unsorted has a total distance of 22205.61m
@@ -793,8 +798,13 @@ To conclude this report, with all the variations tested the best one overall was
 
 Possible improvement that can be made to the nearest neighbour algorithm that was implemented in this report is storing the result from the algorithm into an array instead of an arrayList. This would be possible as the size would be known as it would be the same as the input array. Also just using the input array to store the results instead of creating a copy of it in the algorithm would improve the computation time. This was not implemented as it would make checking the results to ensure that they are valid. Further research into '2-opt' could provide a good way of improving the results obtained from the nearest neighbour algorithm at the cost of a longer run time.
 
-\section{Source code}
+\newpage
 
+\section{Source code}
+ The following source code provided should contain all the classes required to recreate the solution. If there are any errors (there should not be) please Email at 40167111@live.napier.ac.uk.
+ 
+ To run the solution first type in the data set where it is loaded in (TsbLoader.loadTSPLib());
+ Secondly chose what algorithm wants to be run by leaving it as the only uncommented algorithm. Having two algorithms will produce 
 \onecolumn
 \begin{verbatim}
 import java.awt.geom.Point2D;
@@ -1429,74 +1439,6 @@ public class Results
 			System.out.println("Input: "+ original.size() + " | Output: " + resultList.size());
 		}
 	}
-}
-import java.awt.geom.Point2D;
-import java.util.ArrayList;
-public class Main
-{
-	
-	public static void main(String[] args)
-	{
-		Results result = new Results();
-		
-		//File path to tsp's . 
-		String data1 = "..//ADSCoursework//src//rl5915.tsp";
-		String data2 = "..//ADSCoursework//src//rl1323.tsp";
-		String data3 = "..//ADSCoursework//src//rl5934.tsp";
-		String data4 = "..//ADSCoursework//src//rl1304.tsp";
-		String data5 = "..//ADSCoursework//src//rl1889.tsp";
-		String data6 = "..//ADSCoursework//src//berlin52.tsp";
-		
-		
-		
-		// Load data points into arraylist.
-		ArrayList<Point2D> cities = new ArrayList<Point2D>(TsbLoader.loadTSPLib(data1));
-		
-		// Create arrayList for results to be stored in. Same size as in cities.
-		// This should be slightly as size is already known.
-		
-		ArrayList<Point2D> results = new ArrayList<Point2D>(cities.size());
-		// Loop is for repeatability. When recording results remove slowest and fastest extremes for me accuracy.
-		//for(int i =0; i <5; i++)
-		{
-			// Start time when algorithm is about to run.
-			long startTime = System.currentTimeMillis();
-			
-			// ---- Only run one method for algorithm below this or results are inaccurate! ---- \\
-			
-			// results = NearestNeighbourAlgorithm.NearestNeighbour(cities);
-			// results = NearestNeighbourAlgorithm.NearestNeighbourRandStart(cities);
-			// results = NearestNeighbourAlgorithm.NearestNeighbourShuffle(cities);
-			// results = NearestNeighbourAlgorithm.NearestNeighbourSQ(cities);
-			// results = NearestNeighbourAlgorithm.NearestNeighbourRewrite(cities);
-			results = NearestNeighbourAlgorithm.NearestXNeighbour(cities);
-			// results = NearestNeighbourAlgorithm.NearestYNeighbour(cities);
-			
-			// Stop time once algorithm is finished.
-			long stopTime = System.currentTimeMillis();
-			// Calculate how long it took.
-			long elapsedTime = stopTime - startTime;
-			// Add result to list of times.
-			result.AddTimeToArray(elapsedTime);
-			// ---- Timing is finished can check results now. ---- \\
-			
-		}
-		
-		/*	NOTE: because nearest neighbour will always return the same distance there is
-		*  no purpose of storing multiple results. 
-		*  When recording the results from Random start and Shuffle I stored and calculated the average by hand.
-		*  TO DO: Store each of the results and automatically calculate average.
-		*/
-		
-		// This will take the final result and store it.
-		result.SetResults(results);
-		
-		// Print results.
-		result.PrintResults(cities);
-		
-		
-	}
-	
 }
 
 \end{verbatim}

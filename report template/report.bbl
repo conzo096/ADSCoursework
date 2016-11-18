@@ -1,7 +1,15 @@
-\begin{thebibliography}{\protect\citename{contributors }2016}
+\begin{thebibliography}{\protect\citename{fabio Pereira }2016}
 
 \bibitem[\protect\citename{contributors }2016]{tsp}
 {\sc contributors, W.}, 2016.
 \newblock Travelling salesman problem.
+
+\bibitem[\protect\citename{fabio Pereira }2016]{bigo}
+{\sc fabio Pereira}, 2016.
+\newblock Big o.
+
+\bibitem[\protect\citename{Ray }2012]{nn}
+{\sc Ray, M.}, 2012.
+\newblock Nearest neighbours: Pros and cons.
 
 \end{thebibliography}
