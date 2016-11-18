@@ -305,13 +305,13 @@ To calculate the big O notation of an algorithm a series of rules are followed.
 	
 \end{itemize}
 
-The O notation of the nearest neighbour is \begin{math}{n^2} \end{math}. Using the chart for reference it can be judged before results that the complexity is .
+The O notation of the nearest neighbour is \begin{math}{n^2} \end{math}. Using the chart for reference it can be judged before results that the complexity is not good. This is because it has a nest for loop (A while loop is a form of the for loop).
 
 
 
 It is important to note that complexity has an effect on the performance however performance does not affect the complexity of an algorithm. The reason the specifications of the computer being used is because performance is also affected by hardware.
 
-A limitation of this solution is the file reader. It can only read in certain travelling salesman problems which limits the variety of the results obtained. 
+A limitation of this solution is the file reader. It can only read in certain travelling salesman problems which limits the variety of the results obtained. Another limitation is due to the complexity as the data size increases the time taken to compute will also increase therefore once a certain size is achieved it will take to long to compute in a reasonable time.
 \section{Results}
 
 The algorithms were tested using Eclipse Neon.1 Java development environment. Also the machine specifications are as follows:
@@ -737,7 +737,7 @@ Random start has a similar trend in time compared to the original nearest neighb
 
 
 
-The next series of graphs are to show the data size against the total distance the route provides. As the optimised and rewritten algorithms were only aiming to improve the time taken to calculate the nearest neighbour they will be omitted as the route is the exact same as the nearest neighbour and evidence of this is provided in the tables above. 
+The following graph shows the data size against the total distance the route provides. As the optimised and rewritten algorithms were only aiming to improve the time taken to calculate the nearest neighbour they will be omitted as the route is the exact same as the nearest neighbour and evidence of this is provided in the tables above. 
 
 
 \begin{tikzpicture}
@@ -758,47 +758,27 @@ legend pos=north west
 
 As three of the variations were just the nearest neighbour (or attempts to improve it) the results were the same. Comparing the distances of nearest x and nearest y there is a clear improvement using the nearest y algorithm. Regardless of sample size the nearest neighbour always provided smaller distances. Therefore in situations where the distance is important this algorithm is more appropriate than the nearest x and y algorithms. 
 
-From the results obtained an education assumption can be made about the nearest x and nearest y distances and that is the point distribution in the data set is what determines the total distance. For example a point distribution focused around a x-axis range of 0-5 but spread out far on the y-axis then the nearest axis would clearly return a smaller distance and vice-versa. However due to lack of control over what the point distribution would be these algorithms should not be recommended if a short distance is required.
+From the results obtained an education assumption can be made about the nearest x and nearest y distances and that is the point distribution in the data set is what determines the total distance. For example a point distribution focused around a x-axis range of 0-5 but spread out far on the y-axis then the nearest axis would clearly return a smaller distance and vice-versa. However due to lack of control over what the point distribution would be these algorithms should not be recommended if a short distance is required. \paragraph{Route}\hfill
 
-
-\paragraph{Routes}
-
-This section is simply showing the output of each algorithm on some of the data sets. 
-
-\underline{RL5915}
-
-The route when it is unsorted looks like:
-
+ The following section show the dataset rl5915 and the route calculated.
+\onecolumn
 \begin{figure}[h]
-\includegraphics[width=\columnwidth]{images/rl5915unsorted.png}
-\end{figure}
-
-When it is sorted using the nearest neighbour algorithm it looks like:
-\begin{figure}[h]
+	\includegraphics[width=\columnwidth]{images/rl5915unsorted.png}
 	\includegraphics[width=\columnwidth]{images/rl5915nn.png}
+	\caption{Unsorted route vs nearest neighbour.}
 \end{figure}
 
-The nearest x algorithm provides a route that looks like:
-
-When it is sorted using the nearest neighbour algorithm it looks like:
 \begin{figure}[h]
-	\includegraphics[width=\columnwidth]{images/rl5915nx.png}
+		\includegraphics[width=\columnwidth]{images/rl5915nx.png}
+			\includegraphics[width=\columnwidth]{images/rl5915ny.png}
+	\caption{Nearest x vs nearest y.}
 \end{figure}
-
-The nearest y algorithm provides a solution to the tsp problem that looks like:
-When it is sorted using the nearest neighbour algorithm it looks like:
-\begin{figure}[h]
-	\includegraphics[width=\columnwidth]{images/rl5915ny.png}
-\end{figure}
-
-
+\twocolumn
 \section{Conclusion}
 
 To conclude this report, with all the variations tested the best one overall was the nearest neighbour squared. This provides the same distance as the original nearest neighbour however the improvement in the time taken to compute the route has improved significantly. What is interesting to note is that even though the nearest x also had very fast computations majority of the time the route it returned was worse than just leaving the list unsorted. 
 
 Possible improvement that can be made to the nearest neighbour algorithm that was implemented in this report is storing the result from the algorithm into an array instead of an arrayList. This would be possible as the size would be known as it would be the same as the input array. Also just using the input array to store the results instead of creating a copy of it in the algorithm would improve the computation time. This was not implemented as it would make checking the results to ensure that they are valid. Further research into '2-opt' could provide a good way of improving the results obtained from the nearest neighbour algorithm at the cost of a longer run time.
-
-\newpage
 
 \section{Source code}
  The following source code provided should contain all the classes required to recreate the solution. If there are any errors (there should not be) please Email at 40167111@live.napier.ac.uk.
